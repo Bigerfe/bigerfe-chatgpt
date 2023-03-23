@@ -121,15 +121,7 @@ export const ChatInput: FC<Props> = ({ onSend, messageIsStreaming, model, stopCo
         </div>
       </div>
       <div className="px-3 pt-2 pb-3 text-center text-xs text-black/50 dark:text-white/50 md:px-4 md:pt-3 md:pb-6">
-        <a
-          href="https://github.com/mckaywrigley/chatbot-ui"
-          target="_blank"
-          rel="noreferrer"
-          className="underline"
-        >
-          ChatBot UI
-        </a>
-        . Chatbot UI is an advanced chatbot kit for OpenAI&apos;s chat models aiming to mimic ChatGPT&apos;s interface and functionality.
+        bigerfe.com(大前端面试题库) - 模拟chatGPT UI，对接官方chatGPT API，只需要绑定OpenAI API Key 即可体验对话。
       </div>
     </div>
   );
