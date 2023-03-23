@@ -338,7 +338,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Chatbot UI</title>
+        <title>bigerfe chatgpt UI - 对接chatgpt api</title>
         <meta
           name="description"
           content="ChatGPT but better."
