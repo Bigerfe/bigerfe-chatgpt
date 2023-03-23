@@ -9,6 +9,7 @@ import { exportConversations, importConversations } from "@/utils/app/data";
 import { IconArrowBarLeft, IconArrowBarRight } from "@tabler/icons-react";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
+import "./index.css";
 
 export default function Home() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
@@ -353,7 +354,7 @@ export default function Home() {
         />
       </Head>
       {selectedConversation && (
-        <main style={width:'80vw'} className={`flex flex-col h-screen w-screen text-white dark:text-white text-sm ${lightMode}`}>
+        <main className={`flex flex-col h-screen w-screen w-screen1 text-white dark:text-white text-sm ${lightMode}`}>
           <div className="sm:hidden w-full fixed top-0">
             <Navbar
               selectedConversation={selectedConversation}
