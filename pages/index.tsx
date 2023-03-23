@@ -9,7 +9,6 @@ import { exportConversations, importConversations } from "@/utils/app/data";
 import { IconArrowBarLeft, IconArrowBarRight } from "@tabler/icons-react";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
-import "./index.css";
 
 export default function Home() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
