@@ -52,7 +52,7 @@ function getSign(messages: Array<any>, time: string) {
       setMessageIsStreaming(true);
       setMessageError(false);
 
-      const reqTime = `+new Date()`;
+      const reqTime = `${+new Date()}`;
       const chatBody: ChatBody = {
         model: updatedConversation.model,
         messages: updatedConversation.messages,
