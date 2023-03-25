@@ -4,7 +4,7 @@ import { DEFAULT_SYSTEM_PROMPT } from "@/utils/app/const";
 import { OpenAIStream } from "@/utils/server";
 import tiktokenModel from "@dqbd/tiktoken/encoders/cl100k_base.json";
 import { init, Tiktoken } from "@dqbd/tiktoken/lite/init";
-import md5 from "@/utils/common/md5";
+import md5 from "@/utils/common/client-md5";
 // @ts-expect-error
 import wasm from "../../node_modules/@dqbd/tiktoken/lite/tiktoken_bg.wasm?module";
 
