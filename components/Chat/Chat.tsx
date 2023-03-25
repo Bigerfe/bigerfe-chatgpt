@@ -71,7 +71,7 @@ export const Chat: FC<Props> = ({ conversation, models, apiKey, messageIsStreami
           <div className="text-center text-gray-500 dark:text-gray-400">请先在页面左下方设置您的OpenAI API key。</div>
           <div className="text-center text-gray-500 dark:text-gray-400">
           <img style={{width:150,display:'inline'}} src="http://qiniu.bigerfe.com/wo1.jpg"/></div>
-          <div className="text-center text-gray-500 dark:text-gray-400">如果没有key，可以加作者微信，获取共享key。</div>
+          <div className="text-center text-gray-500 dark:text-gray-400">如果没有key，可以加作者微信，获取共享key,请备注『chat』。</div>
         </div>
       )}
 
