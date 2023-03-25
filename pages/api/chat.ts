@@ -23,10 +23,10 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { model, messages, key, prompt, t, sign, other } = (await req.json()) as ChatBody;
     if(other !== 'chatgpt-bigerfe-req-!@#$%^&*()'){
-      if(+new Date() - parseInt(t,10) > 5000){
+      if(+new Date() - parseInt(t || '0',10) > 5000){
         return new Response(`Error-111,请求过期~`);
       } 
-      if(getSign(messages, t) !== sign){
+      if(getSign(messages, t || '0') !== sign){
         //签名验证
         return new Response(`Error-111,验证错误~`);
       }
