@@ -1,8 +1,10 @@
 import { ChatBody, Message, OpenAIModelID } from "@/types";
 import { DEFAULT_SYSTEM_PROMPT } from "@/utils/app/const";
+
 import { OpenAIStream } from "@/utils/server";
 import tiktokenModel from "@dqbd/tiktoken/encoders/cl100k_base.json";
 import { init, Tiktoken } from "@dqbd/tiktoken/lite/init";
+import md5 from "@/utils/common/md5";
 // @ts-expect-error
 import wasm from "../../node_modules/@dqbd/tiktoken/lite/tiktoken_bg.wasm?module";
 
@@ -10,10 +12,25 @@ export const config = {
   runtime: "edge"
 };
 
+// 获得签名
+function getSign(messages: Array<any>, time: string) {
+  const msg:any = messages.length ? messages[messages.length - 1] : '';
+  const PubSignKey = 'chatgpt-bigerfe-start-$%^&*()_';
+  return md5(`${time}${msg.content}${time}${PubSignKey}`);
+}
+
 const handler = async (req: Request): Promise<Response> => {
   try {
-    const { model, messages, key, prompt } = (await req.json()) as ChatBody;
-
+    const { model, messages, key, prompt, t, sign, _other } = (await req.json()) as ChatBody;
+    if(_other !== 'chatgpt-bigerfe-req-!@#$%^&*()'){
+      if(+new Date() - parseInt(t,10) > 5000){
+        return new Response(`Error-111,请求过期~`);
+      } 
+      if(getSign(messages, t) !== sign){
+        //签名验证
+        return new Response(`Error-111,验证错误~`);
+      }
+    }
     await init((imports) => WebAssembly.instantiate(wasm, imports));
     const encoding = new Tiktoken(tiktokenModel.bpe_ranks, tiktokenModel.special_tokens, tiktokenModel.pat_str);
 

@@ -39,6 +39,9 @@ export interface ChatBody {
   messages: Message[];
   key: string;
   prompt: string;
+  t: string
+  sign: string
+  _other: string
 }
 
 export interface KeyValuePair {

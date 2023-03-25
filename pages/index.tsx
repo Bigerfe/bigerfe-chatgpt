@@ -9,7 +9,7 @@ import { exportConversations, importConversations } from "@/utils/app/data";
 import { IconArrowBarLeft, IconArrowBarRight } from "@tabler/icons-react";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
-
+import clientMd5 from "@/utils/common/client-md5";
 export default function Home() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [selectedConversation, setSelectedConversation] = useState<Conversation>();
@@ -22,7 +22,12 @@ export default function Home() {
   const [messageError, setMessageError] = useState<boolean>(false);
   const [modelError, setModelError] = useState<boolean>(false);
   const stopConversationRef = useRef<boolean>(false);
-
+// 获得签名
+function getSign(messages: Array<any>, time: string) {
+  const msg:any = messages.length ? messages[messages.length - 1] : '';
+  const PubSignKey = 'chatgpt-bigerfe-start-$%^&*()_';
+  return clientMd5(`${time}${msg.content}${time}${PubSignKey}`);
+}
   const handleSend = async (message: Message, isResend: boolean) => {
     if (selectedConversation) {
       let updatedConversation: Conversation;
@@ -47,11 +52,14 @@ export default function Home() {
       setMessageIsStreaming(true);
       setMessageError(false);
 
+      const reqTime = `+new Date()`;
       const chatBody: ChatBody = {
         model: updatedConversation.model,
         messages: updatedConversation.messages,
         key: apiKey,
-        prompt: updatedConversation.prompt
+        prompt: updatedConversation.prompt,
+        t: reqTime,
+        sign: getSign(updatedConversation.messages, reqTime),
       };
 
       const controller = new AbortController();
