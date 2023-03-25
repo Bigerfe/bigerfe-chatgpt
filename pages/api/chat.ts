@@ -21,8 +21,8 @@ function getSign(messages: Array<any>, time: string) {
 
 const handler = async (req: Request): Promise<Response> => {
   try {
-    const { model, messages, key, prompt, t, sign, _other } = (await req.json()) as ChatBody;
-    if(_other !== 'chatgpt-bigerfe-req-!@#$%^&*()'){
+    const { model, messages, key, prompt, t, sign, other } = (await req.json()) as ChatBody;
+    if(other !== 'chatgpt-bigerfe-req-!@#$%^&*()'){
       if(+new Date() - parseInt(t,10) > 5000){
         return new Response(`Error-111,请求过期~`);
       } 
