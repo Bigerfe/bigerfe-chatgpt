@@ -74,6 +74,8 @@ export const Chat: FC<Props> = ({ conversation, models, apiKey, messageIsStreami
           <div className="text-center text-gray-500 dark:text-gray-400">如果没有key，可以加作者微信，获取共享key，请备注『chat』。</div>
           <div className="text-center text-gray-500 dark:text-gray-400">也可以进入作者的知识星球『玩转chatGPT和AI绘画』，目前加入星球可赠送独立账号1个+共享账号，<a style={{color:'#fff'}} target="_blank" href="https://t.zsxq.com/0cl2u1Qem">点我打开介绍~</a></div>
           <div className="text-center text-gray-500 dark:text-gray-400">星球试运营中(已运营2天)，目前是最低价，随时都会涨价，早就是优势！</div>
+          <div className="text-center text-gray-500 dark:text-gray-400">注意：我的联系方式只有一个微信:223344386,任何人主动联系你请提高警惕！！！。</div>
+
         </div>
       )}
 
