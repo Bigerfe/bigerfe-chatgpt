@@ -346,7 +346,7 @@ function getSign(messages: Array<any>, time: string) {
   return (
     <>
       <Head>
-        <title>bigerfe chatgpt UI - 对接chatgpt api</title>
+        <title>chatgpt不需要注册也能访问的方法 - 小饭talk AI</title>
         <meta
           name="description"
           content="ChatGPT but better."

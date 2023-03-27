@@ -67,11 +67,13 @@ export const Chat: FC<Props> = ({ conversation, models, apiKey, messageIsStreami
     <div className="relative flex-1 overflow-none dark:bg-[#343541] bg-white">
       {!apiKey && (
         <div className="flex flex-col justify-center mx-auto h-full w-[300px] sm:w-[500px] space-y-6">
-          <div className="text-2xl font-semibold text-center text-gray-800 dark:text-gray-100">需要OpenAI API Key</div>
+          <div className="text-2xl font-semibold text-center text-gray-800 dark:text-gray-100">需要OpenAI API Key 才能对话。</div>
           <div className="text-center text-gray-500 dark:text-gray-400">请先在页面左下方设置您的OpenAI API key。</div>
           <div className="text-center text-gray-500 dark:text-gray-400">
-          <img style={{width:150,display:'inline'}} src="http://qiniu.bigerfe.com/wo1.jpg"/></div>
-          <div className="text-center text-gray-500 dark:text-gray-400">如果没有key，可以加作者微信，获取共享key,请备注『chat』。</div>
+          <img style={{width:120,display:'inline'}} src="http://qiniu.bigerfe.com/wo1.jpg"/></div>
+          <div className="text-center text-gray-500 dark:text-gray-400">如果没有key，可以加作者微信，获取共享key，请备注『chat』。</div>
+          <div className="text-center text-gray-500 dark:text-gray-400">也可以进入作者的知识星球『玩转chatGPT和AI绘画』，目前加入星球可赠送独立账号1个+共享账号，<a style={{color:'#fff'}} target="_blank" href="https://t.zsxq.com/0cl2u1Qem">点我打开介绍~</a></div>
+          <div className="text-center text-gray-500 dark:text-gray-400">星球试运营中(已运营2天)，目前是最低价，随时都会涨价，早就是优势！</div>
         </div>
       )}
 

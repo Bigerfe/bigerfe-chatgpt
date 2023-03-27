@@ -121,7 +121,7 @@ export const ChatInput: FC<Props> = ({ onSend, messageIsStreaming, model, stopCo
         </div>
       </div>
       <div className="px-3 pt-2 pb-3 text-center text-xs text-black/50 dark:text-white/50 md:px-4 md:pt-3 md:pb-6">
-        bigerfe.com(大前端面试题库) - 模拟chatGPT UI，对接官方API接口，只需要绑定OpenAI API Key 即可体验对话。
+        bigerfe.com(大前端面试题库) - 模拟gpt官方 UI，对接官方API接口，只需要绑定OpenAI API Key 即可体验对话。
       </div>
     </div>
   );
