@@ -53,7 +53,7 @@ export const Sidebar: FC<Props> = ({ loading, conversations, lightMode, selected
             className=""
             size={16}
           />
-          New chat
+          创建新对话
         </button>
 
         <IconArrowBarLeft

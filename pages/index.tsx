@@ -210,7 +210,8 @@ function getSign(messages: Array<any>, time: string) {
   };
 
   const handleExportConversations = () => {
-    exportConversations();
+    alert('功能开发中~')
+    // exportConversations();
   };
 
   const handleImportConversations = (conversations: Conversation[]) => {
@@ -229,7 +230,7 @@ function getSign(messages: Array<any>, time: string) {
 
     const newConversation: Conversation = {
       id: lastConversation ? lastConversation.id + 1 : 1,
-      name: `Conversation ${lastConversation ? lastConversation.id + 1 : 1}`,
+      name: `对话 ${lastConversation ? lastConversation.id + 1 : 1}`,
       messages: [],
       model: OpenAIModels[OpenAIModelID.GPT_3_5],
       prompt: DEFAULT_SYSTEM_PROMPT

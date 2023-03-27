@@ -6,10 +6,13 @@ interface Props {
   onImport: (conversations: Conversation[]) => void;
 }
 
+const handlClick = ()=>{
+  alert('功能开发中~')
+}
 export const Import: FC<Props> = ({ onImport }) => {
   return (
     <div className="flex py-3 px-3 gap-3 rounded-md hover:bg-gray-500/10 transition-colors duration-200 text-white cursor-pointer w-full items-center">
-      <input
+      {/* <input
         className="opacity-0 absolute w-[200px] cursor-pointer"
         type="file"
         accept=".json"
@@ -24,10 +27,10 @@ export const Import: FC<Props> = ({ onImport }) => {
           };
           reader.readAsText(file);
         }}
-      />
-      <div className="flex items-center gap-3 text-left">
+      /> */}
+      <div onClick={handlClick} className="flex items-center gap-3 text-left">
         <IconFileImport size={16} />
-        <div>Import conversations</div>
+        <div>导入对话</div>
       </div>
     </div>
   );

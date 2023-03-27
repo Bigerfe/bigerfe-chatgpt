@@ -24,13 +24,13 @@ export const SidebarSettings: FC<Props> = ({ lightMode, apiKey, onToggleLightMod
       <Import onImport={onImportConversations} />
 
       <SidebarButton
-        text="Export conversations"
+        text="导出对话 "
         icon={<IconFileExport size={16} />}
         onClick={() => onExportConversations()}
       />
 
       <SidebarButton
-        text={lightMode === "light" ? "Dark mode" : "Light mode"}
+        text={lightMode === "light" ? "深暗模式" : "明亮模式"}
         icon={lightMode === "light" ? <IconMoon size={16} /> : <IconSun size={16} />}
         onClick={() => onToggleLightMode(lightMode === "light" ? "dark" : "light")}
       />
