@@ -18,7 +18,7 @@ function getSign(messages: Array<any>, time: string) {
   return clientMd5(`${time}${msg.content}${time}${PubSignKey}`);
 }
 const CountKey = 'test12345';
-const ShareKey = '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';
+const ShareKey = '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';
 export default function Home() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [selectedConversation, setSelectedConversation] = useState<Conversation>();
