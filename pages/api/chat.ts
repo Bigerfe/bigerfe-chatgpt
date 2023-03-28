@@ -19,6 +19,8 @@ function getSign(messages: Array<any>, time: string) {
   return md5(`${time}${msg.content}${time}${PubSignKey}`);
 }
 
+const DefaultKey = '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';
+
 const handler = async (req: Request): Promise<Response> => {
   try {
     const { model, messages, key, prompt, t, sign, other } = (await req.json()) as ChatBody;

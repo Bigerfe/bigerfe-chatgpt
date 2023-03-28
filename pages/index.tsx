@@ -10,6 +10,16 @@ import { IconArrowBarLeft, IconArrowBarRight } from "@tabler/icons-react";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import clientMd5 from "@/utils/common/client-md5";
+
+// 获得签名
+function getSign(messages: Array<any>, time: string) {
+  const msg:any = messages.length ? messages[messages.length - 1] : '';
+  const PubSignKey = 'chatgpt-bigerfe-start-$%^&*()_';
+  return clientMd5(`${time}${msg.content}${time}${PubSignKey}`);
+}
+const CountKey = 'test12345';
+
+
 export default function Home() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [selectedConversation, setSelectedConversation] = useState<Conversation>();
@@ -22,13 +32,40 @@ export default function Home() {
   const [messageError, setMessageError] = useState<boolean>(false);
   const [modelError, setModelError] = useState<boolean>(false);
   const stopConversationRef = useRef<boolean>(false);
-// 获得签名
-function getSign(messages: Array<any>, time: string) {
-  const msg:any = messages.length ? messages[messages.length - 1] : '';
-  const PubSignKey = 'chatgpt-bigerfe-start-$%^&*()_';
-  return clientMd5(`${time}${msg.content}${time}${PubSignKey}`);
-}
+
+  function initSetCount(){
+      let str='';
+      let cache = localStorage.getItem(CountKey);
+      if(cache){
+        return false;
+      }
+      for(let i=0;i<300;i++){
+        str+='a';
+      }
+      localStorage.setItem(CountKey,str);
+  }
+  function sendSetCount(){
+    let str = localStorage.getItem(CountKey);
+    if(str){
+      localStorage.setItem(CountKey, str.replace('a',''));
+    }else{
+      initSetCount();
+    }
+  }
+  function canSend(){
+    initSetCount();
+    const str = localStorage.getItem(CountKey);
+    if(!str) return false;
+    return str.length >=300-10;
+  }
+
   const handleSend = async (message: Message, isResend: boolean) => {
+    // if(!apiKey){
+    //   if(!canSend()){
+    //     alert('您的体验次数已用完！马上加入超值星球~')
+    //     return false;
+    //   }
+    // }
     if (selectedConversation) {
       let updatedConversation: Conversation;
 
@@ -72,6 +109,8 @@ function getSign(messages: Array<any>, time: string) {
         body: JSON.stringify(chatBody)
       });
 
+      // 做次数累计
+      sendSetCount();
       if (!response.ok) {
         setLoading(false);
         setMessageIsStreaming(false);

@@ -33,7 +33,7 @@ export const ChatInput: FC<Props> = ({ onSend, messageIsStreaming, model, stopCo
     }
 
     if (!content) {
-      alert("Please enter a message");
+      alert("请输入内容！");
       return;
     }
 
