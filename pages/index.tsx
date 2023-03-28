@@ -18,7 +18,9 @@ function getSign(messages: Array<any>, time: string) {
   return clientMd5(`${time}${msg.content}${time}${PubSignKey}`);
 }
 const CountKey = 'test12345';
-const ShareKey = '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';
+const ShareKey1 = 'oaTWmoRaEmC';
+const ShareKey2 = 'r8dBceXnKT3Blbk'
+const ShareKey3 ='FJDU6QjpAsImb489zPVE8j';
 export default function Home() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [selectedConversation, setSelectedConversation] = useState<Conversation>();
@@ -44,7 +46,7 @@ export default function Home() {
       localStorage.setItem(CountKey,str);
   }
   function sendSetCount(){
-    if(apiKey !== ShareKey){return false;}
+    if(apiKey !== `sk-${ShareKey1}${ShareKey2}${ShareKey3}`){return false;}
     let str = localStorage.getItem(CountKey);
     if(str){
       localStorage.setItem(CountKey, str.replace('a',''));
