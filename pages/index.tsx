@@ -18,8 +18,7 @@ function getSign(messages: Array<any>, time: string) {
   return clientMd5(`${time}${msg.content}${time}${PubSignKey}`);
 }
 const CountKey = 'test12345';
-
-
+const ShareKey = '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';
 export default function Home() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [selectedConversation, setSelectedConversation] = useState<Conversation>();
@@ -45,6 +44,7 @@ export default function Home() {
       localStorage.setItem(CountKey,str);
   }
   function sendSetCount(){
+    if(apiKey !== ShareKey){return false;}
     let str = localStorage.getItem(CountKey);
     if(str){
       localStorage.setItem(CountKey, str.replace('a',''));
@@ -56,16 +56,17 @@ export default function Home() {
     initSetCount();
     const str = localStorage.getItem(CountKey);
     if(!str) return false;
-    return str.length >=300-10;
+    return str.length >=300-2;
   }
-
+  
   const handleSend = async (message: Message, isResend: boolean) => {
-    // if(!apiKey){
-    //   if(!canSend()){
-    //     alert('您的体验次数已用完！马上加入超值星球~')
-    //     return false;
-    //   }
-    // }
+    if(apiKey === ShareKey){
+      if(!canSend()){
+        alert('您的体验次数已用完！马上加入超值星球~');
+
+        return false;
+      }
+    }
     if (selectedConversation) {
       let updatedConversation: Conversation;
 
