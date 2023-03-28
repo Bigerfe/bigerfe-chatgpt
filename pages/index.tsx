@@ -58,7 +58,7 @@ export default function Home() {
     initSetCount();
     const str = localStorage.getItem(CountKey);
     if(!str) return false;
-    return str.length >=300-2;
+    return str.length >=300-10;
   }
   
   const handleSend = async (message: Message, isResend: boolean) => {
