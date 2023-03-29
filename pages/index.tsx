@@ -64,7 +64,7 @@ export default function Home() {
   const handleSend = async (message: Message, isResend: boolean) => {
     if(apiKey === `sk-${ShareKey1}${ShareKey2}${ShareKey3}`){
       if(!canSend()){
-        alert('您的体验次数已用完！马上加入超值星球~');
+        alert('您的10次体验已用完！联系作者获取独立账号吧~');
 
         return false;
       }
