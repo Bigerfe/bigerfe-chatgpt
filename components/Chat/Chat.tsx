@@ -76,7 +76,7 @@ export const Chat: FC<Props> = ({ conversation, models, apiKey, messageIsStreami
           {/* <div className="text-center text-gray-500 dark:text-gray-400">也可以进入作者的知识星球『玩转chatGPT和AI绘画』，目前加入星球可赠送独立账号1个+KEY+N个共享账号，<a style={{color:'#fff'}} target="_blank" href="https://t.zsxq.com/0cl2u1Qem">点我打开介绍~</a></div> */}
           {/* <div className="text-center text-gray-500 dark:text-gray-400">星球试运营中(已运营2天)，目前是最低价，随时都会涨价，早就是优势！</div> */}
           <div className="text-center text-gray-500 dark:text-gray-400">
-          <img style={{width:120,display:'inline'}} src="https://qiniu.bigerfe.com/fanfanlogo.jpeg"/></div>
+          <img style={{width:120,display:'inline'}} src="https://qiniu.bigerfe.com/fangegongzonghao.jpg"/></div>
           <div className="text-center text-gray-500 dark:text-gray-400">扫码加作者公众号</div>
         </div>
       )}
