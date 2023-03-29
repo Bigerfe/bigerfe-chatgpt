@@ -72,12 +72,12 @@ export const Chat: FC<Props> = ({ conversation, models, apiKey, messageIsStreami
           <div className="text-1xl font-semibold text-center text-gray-800 dark:text-gray-100">我的愿景：带领一小部分人走在前面，紧跟时代，把握机遇。</div>
           <div className="text-2xl font-semibold text-center text-gray-800 dark:text-gray-100">需要OpenAI API Key 才能对话。 </div>
           <div className="text-center text-gray-500 dark:text-gray-400">请先在页面左下方设置您的OpenAI API key。</div>
-          <div className="text-center text-gray-500 dark:text-gray-400">如果没有key，请加作者微信，获取共享KEY。</div>
+          <div className="text-center text-gray-500 dark:text-gray-400">如果没有key，请加作者公众号，获取共享KEY。</div>
           {/* <div className="text-center text-gray-500 dark:text-gray-400">也可以进入作者的知识星球『玩转chatGPT和AI绘画』，目前加入星球可赠送独立账号1个+KEY+N个共享账号，<a style={{color:'#fff'}} target="_blank" href="https://t.zsxq.com/0cl2u1Qem">点我打开介绍~</a></div> */}
           {/* <div className="text-center text-gray-500 dark:text-gray-400">星球试运营中(已运营2天)，目前是最低价，随时都会涨价，早就是优势！</div> */}
           <div className="text-center text-gray-500 dark:text-gray-400">
-          <img style={{width:120,display:'inline'}} src="http://qiniu.bigerfe.com/wo1.jpg"/></div>
-          <div className="text-center text-gray-500 dark:text-gray-400">扫码加作者微信</div>
+          <img style={{width:120,display:'inline'}} src="https://qiniu.bigerfe.com/fanfanlogo.jpeg"/></div>
+          <div className="text-center text-gray-500 dark:text-gray-400">扫码加作者公众号</div>
         </div>
       )}
 
