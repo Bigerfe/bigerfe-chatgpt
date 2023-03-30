@@ -23,15 +23,11 @@
   background-color: transparent;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
-}
+} */
 
 html {
   background: #202123;
-}
-
-.w-screen1{
-  width: 100vw;
 }
