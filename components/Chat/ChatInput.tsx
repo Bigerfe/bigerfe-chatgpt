@@ -87,7 +87,7 @@ export const ChatInput: FC<Props> = ({ onSend, messageIsStreaming, model, stopCo
               size={16}
               className="inline-block mb-[2px]"
             />{" "}
-            Stop Generating
+            停止回答
           </button>
         )}
         <div className="flex flex-col w-full py-2 flex-grow md:py-3 md:pl-4 relative border border-black/10 bg-white dark:border-gray-900/50 dark:text-white dark:bg-[#40414F] rounded-md shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:shadow-[0_0_15px_rgba(0,0,0,0.10)]">
