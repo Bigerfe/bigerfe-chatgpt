@@ -77,7 +77,7 @@ export const Chat: FC<Props> = ({ conversation, models, apiKey, messageIsStreami
           {/* <div className="text-center text-gray-500 dark:text-gray-400">星球试运营中(已运营2天)，目前是最低价，随时都会涨价，早就是优势！</div> */}
           <div className="text-center text-gray-500 dark:text-gray-400">
           <img style={{width:120,display:'inline'}} src="https://qiniu.bigerfe.com/fangegongzonghao.jpg"/></div>
-          <div className="text-center text-gray-500 dark:text-gray-400">扫码加作者公众号</div>
+          <div className="text-center text-gray-500 dark:text-gray-400">扫码关注公众号</div>
         </div>
       )}
 
