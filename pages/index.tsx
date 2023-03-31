@@ -21,6 +21,7 @@ const CountKey = 'test12345';
 const ShareKey1 = 'oaTWmoRaEmC';
 const ShareKey2 = 'r8dBceXnKT3Blbk'
 const ShareKey3 ='FJDU6QjpAsImb489zPVE8j';
+const CanSendCount = 15; //可以体验15条
 export default function Home() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [selectedConversation, setSelectedConversation] = useState<Conversation>();
@@ -58,14 +59,12 @@ export default function Home() {
     initSetCount();
     const str = localStorage.getItem(CountKey);
     if(!str) return false;
-    return str.length >=300-10;
+    return str.length >=300 - CanSendCount;
   }
-  
   const handleSend = async (message: Message, isResend: boolean) => {
     if(apiKey === `sk-${ShareKey1}${ShareKey2}${ShareKey3}`){
       if(!canSend()){
-        alert('您的10次体验已用完！联系作者获取独立账号吧~');
-
+        alert(`您的${CanSendCount}次体验已用完（共享账号需要限流）！联系作者增加次数或者获取独立账号吧~`);
         return false;
       }
     }
