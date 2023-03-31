@@ -64,7 +64,7 @@ export default function Home() {
   const handleSend = async (message: Message, isResend: boolean) => {
     if(apiKey === `sk-${ShareKey1}${ShareKey2}${ShareKey3}`){
       if(!canSend()){
-        alert(`您的${CanSendCount}次体验已用完（共享账号需要限流）！联系作者增加次数或者获取独立账号吧~`);
+        alert(`您的${CanSendCount}次体验已用完（共享账号被迫限流）！联系作者增加次数或者获取独立账号吧~`);
         return false;
       }
     }
