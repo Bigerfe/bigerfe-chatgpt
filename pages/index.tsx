@@ -389,7 +389,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>chatgpt不需要注册也能访问的方法 - 小饭talk AI</title>
+        <title>chatGPT中文版 - 稳定版</title>
         <meta
           name="description"
           content="ChatGPT but better."
