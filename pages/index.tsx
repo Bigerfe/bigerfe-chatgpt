@@ -18,9 +18,9 @@ function getSign(messages: Array<any>, time: string) {
   return clientMd5(`${time}${msg.content}${time}${PubSignKey}`);
 }
 const CountKey = 'test12345';
-const ShareKey1 = 'oaTWmoRaEmC';
-const ShareKey2 = 'r8dBceXnKT3Blbk'
-const ShareKey3 ='FJDU6QjpAsImb489zPVE8j';
+const ShareKey1 = 'hbr8mbILHH3kaNl';
+const ShareKey2 = 'xNjKET3BlbkFJh'
+const ShareKey3 ='cfLzky1cYZBFXbP4y8D';
 const CanSendCount = 15; //可以体验15条
 export default function Home() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
