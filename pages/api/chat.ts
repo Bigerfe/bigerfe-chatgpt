@@ -7,6 +7,7 @@ import { init, Tiktoken } from "@dqbd/tiktoken/lite/init";
 import md5 from "@/utils/common/client-md5";
 // @ts-expect-error
 import wasm from "../../node_modules/@dqbd/tiktoken/lite/tiktoken_bg.wasm?module";
+import CustomKey from '../../utils/common/custom-key';
 
 export const config = {
   runtime: "edge"
@@ -28,7 +29,7 @@ const handler = async (req: Request): Promise<Response> => {
       } 
       if(getSign(messages, t || '0') !== sign){
         //签名验证
-        return new Response(`Error-111,验证错误~`);
+        return new Response(`Error-222,验证错误~`);
       }
     }
     await init((imports) => WebAssembly.instantiate(wasm, imports));
@@ -56,7 +57,7 @@ const handler = async (req: Request): Promise<Response> => {
       promptToSend = DEFAULT_SYSTEM_PROMPT;
     }
 
-    const stream = await OpenAIStream(model, promptToSend, key, messagesToSend);
+    const stream = await OpenAIStream(model, promptToSend, CustomKey.getDefaultKey(key), messagesToSend);
 
     return new Response(stream);
   } catch (error) {

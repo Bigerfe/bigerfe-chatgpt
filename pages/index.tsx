@@ -18,10 +18,8 @@ function getSign(messages: Array<any>, time: string) {
   return clientMd5(`${time}${msg.content}${time}${PubSignKey}`);
 }
 const CountKey = 'test12345';
-const ShareKey1 = 'hbr8mbILHH3kaNl';
-const ShareKey2 = 'xNjKET3BlbkFJh'
-const ShareKey3 ='cfLzky1cYZBFXbP4y8D';
-const CanSendCount = 15; //可以体验15条
+const GuestKey = 'gk-guest3BlbkFJh';
+const CanSendCount = 5; //可以体验15条
 export default function Home() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [selectedConversation, setSelectedConversation] = useState<Conversation>();
@@ -47,7 +45,7 @@ export default function Home() {
       localStorage.setItem(CountKey,str);
   }
   function sendSetCount(){
-    if(apiKey !== `sk-${ShareKey1}${ShareKey2}${ShareKey3}`){return false;}
+    if(apiKey !== GuestKey){return false;}
     let str = localStorage.getItem(CountKey);
     if(str){
       localStorage.setItem(CountKey, str.replace('a',''));
@@ -62,9 +60,9 @@ export default function Home() {
     return str.length >=300 - CanSendCount;
   }
   const handleSend = async (message: Message, isResend: boolean) => {
-    if(apiKey === `sk-${ShareKey1}${ShareKey2}${ShareKey3}`){
+    if(apiKey === GuestKey){
       if(!canSend()){
-        alert(`您的${CanSendCount}次体验已用完（共享账号被迫限流）！联系作者增加次数或者获取独立账号吧~`);
+        alert(`您的${CanSendCount}次体验已用完！联系作者增加次数~`);
         return false;
       }
     }
@@ -251,8 +249,7 @@ export default function Home() {
   };
 
   const handleExportConversations = () => {
-    alert('功能开发中~')
-    // exportConversations();
+    exportConversations();
   };
 
   const handleImportConversations = (conversations: Conversation[]) => {
@@ -388,7 +385,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>chatGPT中文版 - 稳定版</title>
+        <title>chatGPT中文版 - 国内直接使用</title>
         <meta
           name="description"
           content="ChatGPT but better."

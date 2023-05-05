@@ -1,5 +1,5 @@
 import { OpenAIModel, OpenAIModelID, OpenAIModels } from "@/types";
-
+import CustomKey from '../../utils/common/custom-key';
 export const config = {
   runtime: "edge"
 };
@@ -13,7 +13,7 @@ const handler = async (req: Request): Promise<Response> => {
     const response = await fetch("https://api.openai.com/v1/models", {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`
+        Authorization: `Bearer ${key ? CustomKey.getDefaultKey(key) : process.env.OPENAI_API_KEY}`
       }
     });
 
