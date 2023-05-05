@@ -16,19 +16,19 @@ const CustomCards = {
   'gk-guest3BlbkFJh':{
     status:1,
   },
-  'gk-user-JzQj5qVv8xTt7yRr':{
+  'gk-user-JzQj5qVv8xTt7yRr-ai.bigerfe.com':{
     status:1
   },
-  'gk-user-z5vJj8xTtKk7yRrL':{
+  'gk-user-z5vJj8xTtKk7yRrL--ai.bigerfe.com':{
     status:1
   },
-  'gk-user-Qj5zVv8xTtKk7yRr':{
+  'gk-user-Qj5zVv8xTtKk7yRr--ai.bigerfe.com':{
     status:1
   }, 
-  'gk-user-Qj5zVv8xTtKk7yRrL':{
+  'gk-user-Qj5zVv8xTtKk7yRrL--ai.bigerfe.com':{
     status:1
   },
-  'gk-user-z5vJj8xTtKk7yRrM':{
+  'gk-user-z5vJj8xTtKk7yRrM--ai.bigerfe.com':{
     status:1
   }
 }
