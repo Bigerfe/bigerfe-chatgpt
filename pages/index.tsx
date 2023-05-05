@@ -62,7 +62,7 @@ export default function Home() {
   const handleSend = async (message: Message, isResend: boolean) => {
     if(apiKey === GuestKey){
       if(!canSend()){
-        alert(`您的${CanSendCount}次体验已用完！联系作者增加次数~`);
+        alert(`您的${CanSendCount}次体验已用完！联系作者增加次数~ 作者微信：223344386`);
         return false;
       }
     }
