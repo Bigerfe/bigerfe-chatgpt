@@ -32,6 +32,9 @@ const handler = async (req: Request): Promise<Response> => {
         return new Response(`Error-222,验证错误~`);
       }
     }
+    if(CustomKey.getDefaultKey(key) === CustomKey.ErrorCode.cardDisable){
+      return new Response(`卡密已过期，请重新去公众号(程序员饭哥)获取，回复"卡密"领取. 请新建对话提问~`); 
+    }
     await init((imports) => WebAssembly.instantiate(wasm, imports));
     const encoding = new Tiktoken(tiktokenModel.bpe_ranks, tiktokenModel.special_tokens, tiktokenModel.pat_str);
 
