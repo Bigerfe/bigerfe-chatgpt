@@ -62,7 +62,7 @@ export default function Home() {
   const handleSend = async (message: Message, isResend: boolean) => {
     if(apiKey === GuestKey){
       if(!canSend()){
-        alert(`您的${CanSendCount}次体验已用完！去公众号回复"已发圈"，领取正式卡密！卡密每7天重置一次，到时可重新领取！`);
+        alert(`您的${CanSendCount}次体验已用完！去公众号回复"卡密"，领取正式卡密！卡密每7天重置一次，到时可重新领取！`);
         return false;
       }
     }
