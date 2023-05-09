@@ -386,7 +386,7 @@ export default function Home() {
 
   if(!WebSiteStatus)
   return <>
-  <div>Error: returned an error: Too Many Requests. Please waite a moment.</div>
+  <div style={{color:'white'}}>Error: returned an error: Too Many Requests. Please waite a moment.</div>
   </>
 
   return (
