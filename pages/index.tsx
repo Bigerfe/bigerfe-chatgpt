@@ -382,6 +382,13 @@ export default function Home() {
     }
   }, []);
 
+  const WebSiteStatus = 0; //0关闭 1启动
+
+  if(!WebSiteStatus)
+  return <>
+  <div>Error: returned an error: Too Many Requests. Please waite a moment.</div>
+  </>
+
   return (
     <>
       <Head>
