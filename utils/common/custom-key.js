@@ -13,9 +13,13 @@ function getDefaultKey(key) {
   // const ShareKey1 = 'hbr8mbILHH3kaNl';
   // const ShareKey2 = 'xNjKET3BlbkFJh'
   // const ShareKey3 = 'cfLzky1cYZBFXbP4y8D';
-  const ShareKey1 = 'KuJU1nLTwKxt';
-  const ShareKey2 = 'k00Y2IUiT3BlbkFJtq'
-  const ShareKey3 = 'SPouTcJr5O34QVPxRc';
+  // const ShareKey1 = 'KuJU1nLTwKxt';
+  // const ShareKey2 = 'k00Y2IUiT3BlbkFJtq'
+  // const ShareKey3 = 'SPouTcJr5O34QVPxRc';
+
+  const ShareKey1 = '9yj8jmmuTO7MW';
+  const ShareKey2 = 'NA9TIsBT3BlbkF'
+  const ShareKey3 = 'JBvTund65O53iqPOv4p8Z';
 
   return `sk-${ShareKey1}${ShareKey2}${ShareKey3}`
 }
