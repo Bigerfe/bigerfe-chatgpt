@@ -16,10 +16,9 @@ function getDefaultKey(key) {
   // const ShareKey1 = 'KuJU1nLTwKxt';
   // const ShareKey2 = 'k00Y2IUiT3BlbkFJtq'
   // const ShareKey3 = 'SPouTcJr5O34QVPxRc';
-
-  const ShareKey1 = '9yj8jmmuTO7MW';
-  const ShareKey2 = 'NA9TIsBT3BlbkF'
-  const ShareKey3 = 'JBvTund65O53iqPOv4p8Z';
+  const ShareKey1 = 'uVi9Ou2wrK';
+  const ShareKey2 = 'nE7W9e5WwnT3BlbkFJQdA'
+  const ShareKey3 = '07jaReALtPbqhbPXo';
 
   return `sk-${ShareKey1}${ShareKey2}${ShareKey3}`
 }
