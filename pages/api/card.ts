@@ -28,7 +28,7 @@ const handler = async (req: Request): Promise<Response> => {
     // const session = await kv.get(API_KEY_NAME);
 
     // const { model, messages, key, prompt, t, sign, other } = (await req.json()) as ChatBody;
-    await kv.set(CUSTOME_CARDS_KEY_NAME, "session_token_value");
+    await kv.set(CUSTOME_CARDS_KEY_NAME, "111222333");
     const session = await kv.get(CUSTOME_CARDS_KEY_NAME);
     return new Response('ddddd'+session);
 
