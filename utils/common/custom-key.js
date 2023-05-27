@@ -39,9 +39,6 @@ const CustomCards = {
   'gk-user-Qj5zVv8xTtKk7yRrL-ai.bigerfe.com': {
     status: 1
   },
-  'gk-user-z5vJj8xTtKk7yRrM-ai.bigerfe.com': {
-    status: 2
-  },
   'gk-user-JzQuiuiTt7yRr-ai.bigerfe.com': {
     status: 1
   },
