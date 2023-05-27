@@ -10,9 +10,16 @@ function getDefaultKey(key) {
   if (!CustomCards[key] || !CustomCards[key].status) {
     return ErrorCode.cardDisable; //卡密已无效，请重新获取。
   }
-  const ShareKey1 = 'hbr8mbILHH3kaNl';
-  const ShareKey2 = 'xNjKET3BlbkFJh'
-  const ShareKey3 = 'cfLzky1cYZBFXbP4y8D';
+  // const ShareKey1 = 'hbr8mbILHH3kaNl';
+  // const ShareKey2 = 'xNjKET3BlbkFJh'
+  // const ShareKey3 = 'cfLzky1cYZBFXbP4y8D';
+  // const ShareKey1 = 'KuJU1nLTwKxt';
+  // const ShareKey2 = 'k00Y2IUiT3BlbkFJtq'
+  // const ShareKey3 = 'SPouTcJr5O34QVPxRc';
+  const ShareKey1 = 'uVi9Ou2wrK';
+  const ShareKey2 = 'nE7W9e5WwnT3BlbkFJQdA'
+  const ShareKey3 = '07jaReALtPbqhbPXo';
+
   return `sk-${ShareKey1}${ShareKey2}${ShareKey3}`
 }
 
