@@ -69,7 +69,7 @@ export const Chat: FC<Props> = ({ conversation, models, apiKey, messageIsStreami
         <div className="flex flex-col justify-center mx-auto h-full w-[300px] sm:w-[500px] space-y-6">
           <div className="text-1xl font-semibold text-center text-gray-400">Hi,我是程序员饭哥,爱好互联网、编程、AI领域，做过后端、前端，写过C/C++、Java、Android、PHP，现在做前端领域。</div>
           {/* <div className="text-1xl font-semibold text-center text-gray-800 dark:text-gray-100">在这里都能找到我的痕迹，我的公众号-前端技术江湖、<a target="_blank" href="http://bigerfe.com">大前端面试刷题网</a>、<a href="https://github.com/Bigerfe/koa-react-ssr" target="_blank">React SSR开发框架</a>、gpt小程序版：小饭talk（近期上线） </div> */}
-          <div className="text-1xl font-semibold text-center text-gray-400">我的愿景：带领一小部分人走在前面，紧跟时代，把握机遇。</div>
+          <div className="text-1xl font-semibold text-center text-gray-400">站长说：本站提供免费gpt对话服务，让关注我的朋友用上正宗的gpt。</div>
           <div className="text-2xl font-semibold text-center text-gray-800 dark:text-gray-100">需要设置OpenAI API Key 才能对话。 <a style={{color:'green', textDecoration:'underline'}} href="https://mp.weixin.qq.com/s/jAuF5D9eQ75bsIBqQa8k0Q">key设置教程</a> </div>
           <div className="text-2xl font-semibold text-center text-gray-800 dark:text-gray-100">如果没有key，请关注作者公众号，获取共享KEY。 </div>
           <div className="text-center text-gray-500 dark:text-gray-800 dark:text-gray-100"></div>
@@ -84,8 +84,7 @@ export const Chat: FC<Props> = ({ conversation, models, apiKey, messageIsStreami
       {modelError ? (
         <div className="flex flex-col justify-center mx-auto h-full w-[300px] sm:w-[500px] space-y-6">
           <div className="text-center text-red-500">Error fetching models.</div>
-          <div className="text-center text-red-500">Make sure your OpenAI API key is set in the bottom left of the sidebar or in a .env.local file and refresh.</div>
-          <div className="text-center text-red-500">If you completed this step, OpenAI may be experiencing issues.</div>
+          <div className="text-center text-red-500">发生错误，很可能你的key已经过期，请联系站长确认！</div>
         </div>
       ) : (
         <>
