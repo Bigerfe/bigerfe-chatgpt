@@ -84,7 +84,7 @@ export const Chat: FC<Props> = ({ conversation, models, apiKey, messageIsStreami
       {modelError ? (
         <div className="flex flex-col justify-center mx-auto h-full w-[300px] sm:w-[500px] space-y-6">
           <div className="text-center text-red-500">Error fetching models.</div>
-          <div className="text-center text-red-500">发生错误，很可能你的key已经过期，请联系站长确认！</div>
+          <div className="text-center text-red-500">发生错误，很可能你的key已经过期，请联系站长确认！ </div>
         </div>
       ) : (
         <>

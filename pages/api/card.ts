@@ -8,7 +8,7 @@ export const config = {
 
 const handler = async (req: Request): Promise<Response> => {
 
-    const { model, messages, key, prompt, t, sign, other } = (await req.json()) as ChatBody;
+    // const { model, messages, key, prompt, t, sign, other } = (await req.json()) as ChatBody;
     await kv.set("user_1_session", "session_token_value");
     const session = await kv.get("user_1_session");
     return new Response('ddddd'+session);
