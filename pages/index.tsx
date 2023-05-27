@@ -3,7 +3,7 @@ import { Navbar } from "@/components/Mobile/Navbar";
 import { Sidebar } from "@/components/Sidebar/Sidebar";
 import { ChatBody, Conversation, KeyValuePair, Message, OpenAIModel, OpenAIModelID, OpenAIModels } from "@/types";
 import { cleanConversationHistory, cleanSelectedConversation } from "@/utils/app/clean";
-import { DEFAULT_SYSTEM_PROMPT } from "@/utils/app/const";
+import { DEFAULT_SYSTEM_PROMPT, RES_CODE_MAP, RES_CODE_ARRAY } from "@/utils/app/const";
 import { saveConversation, saveConversations, updateConversation } from "@/utils/app/conversation";
 import { exportConversations, importConversations } from "@/utils/app/data";
 import { IconArrowBarLeft, IconArrowBarRight } from "@tabler/icons-react";
@@ -119,7 +119,7 @@ export default function Home() {
       }
 
       const data = response.body;
-
+      
       if (!data) {
         setLoading(false);
         setMessageIsStreaming(false);

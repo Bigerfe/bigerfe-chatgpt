@@ -25,15 +25,15 @@ const handler = async (req: Request): Promise<Response> => {
     const { model, messages, key, prompt, t, sign, other } = (await req.json()) as ChatBody;
     if(other !== 'chatgpt-bigerfe-req-!@#$%^&*()'){
       if(+new Date() - parseInt(t || '0',10) > 5000){
-        return new Response(`Error-111,请求过期~`);
+        return new Response(`-111 网络问题，导致请求已过期！ 请新建对话~`); // 请求过期
       } 
       if(getSign(messages, t || '0') !== sign){
         //签名验证
-        return new Response(`Error-222,验证错误~`);
+        return new Response(`-222 非法访问，签名失败！`); // 签名验证失败
       }
     }
     if(CustomKey.getDefaultKey(key) === CustomKey.ErrorCode.cardDisable){
-      return new Response(`卡密已过期，请重新去公众号(程序员饭哥)获取，回复"卡密"领取. 请新建对话提问~`); 
+      return new Response(`-333 卡密已过期，请取站长公众号重新获取卡密，回复 卡密 即可! 然后请新建对话使用！`);  //卡密过期
     }
     await init((imports) => WebAssembly.instantiate(wasm, imports));
     const encoding = new Tiktoken(tiktokenModel.bpe_ranks, tiktokenModel.special_tokens, tiktokenModel.pat_str);
