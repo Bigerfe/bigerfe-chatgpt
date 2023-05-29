@@ -58,7 +58,7 @@ export const Key: FC<Props> = ({ apiKey, onApiKeyChange }) => {
     </div>
   ) : (
     <SidebarButton
-      text="设置 OpenAI Key"
+      text="设置 Key|卡密"
       icon={<IconKey size={16} />}
       onClick={() => setIsChanging(true)}
     />
