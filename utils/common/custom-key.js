@@ -8,7 +8,7 @@ const USER_SK_IDS_KEY = 'user-sk-ids';
 
 function getDefaultKey(key) {
   if (!CustomCards[key] || !CustomCards[key].status) {
-    return ErrorCode.cardDisable; //卡密已无效，请重新获取。
+    return ErrorCode.cardDisable.toString(); //卡密已无效，请重新获取。
   }
   // const ShareKey1 = 'hbr8mbILHH3kaNl';
   // const ShareKey2 = 'xNjKET3BlbkFJh'
