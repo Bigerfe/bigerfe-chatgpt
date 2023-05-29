@@ -7,6 +7,9 @@ const ErrorCode = {
 const USER_SK_IDS_KEY = 'user-sk-ids';
 
 function getDefaultKey(key) {
+  if(key.indexOf('sk-')>-1) {
+    return key;
+  }
   if (!CustomCards[key] || !CustomCards[key].status) {
     return ErrorCode.cardDisable.toString(); //卡密已无效，请重新获取。
   }
