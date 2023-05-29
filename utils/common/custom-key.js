@@ -1,5 +1,4 @@
 
-import { kv } from "@vercel/kv";
 
 const ErrorCode = {
   cardDisable: -999, //卡密无效
