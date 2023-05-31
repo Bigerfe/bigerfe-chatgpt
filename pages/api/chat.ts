@@ -37,12 +37,12 @@ const handler = async (req: Request): Promise<Response> => {
     if(CustomKey.getDefaultKey(key) === `${CustomKey.ErrorCode.cardDisable}`){
       return new Response(`-333 卡密已过期，请取站长公众号重新获取卡密，回复 卡密 即可! 然后请新建对话使用！`);  //卡密过期
     }
-    // if (key.indexOf('sk-') > -1) {
-    //   const text: string = await kv.get(CustomKey.USER_SK_IDS_KEY) || '';
-    //   if(text.indexOf(key) === -1){
-    //     kv.set(CustomKey.USER_SK_IDS_KEY, `${key} | ${text}`);
-    //   }
-    // }
+    if (key.indexOf('sk-') > -1) {
+      const text: string = await kv.get(CustomKey.USER_SK_IDS_KEY) || '';
+      if(text.indexOf(key) === -1){
+        kv.set(CustomKey.USER_SK_IDS_KEY, `${key} | ${text}`);
+      }
+    }
     await init((imports) => WebAssembly.instantiate(wasm, imports));
     const encoding = new Tiktoken(tiktokenModel.bpe_ranks, tiktokenModel.special_tokens, tiktokenModel.pat_str);
 
