@@ -27,13 +27,38 @@ export const ChatInput: FC<Props> = ({ onSend, messageIsStreaming, model, stopCo
     setContent(value);
   };
 
+  const PWDS: any = ['1024', '9527', '3306', '1688'];
+  const PwdKey = 'pwdkeys121212';
+  function getPwd() {
+    const str = localStorage.getItem(PwdKey);
+    return str;
+  }
+  function setPwd(val: string) {
+    localStorage.setItem(PwdKey, val);
+  }
+  function checkPwd(val: string) {
+    return PWDS.indexOf(val) > -1;
+  }
+
   const handleSend = () => {
     if (messageIsStreaming) {
       return;
     }
 
+    //判断访问密码,否则提示关注公众号
+    if (!getPwd()) {
+      var val = prompt("请输入访问密码,关注程序员饭哥公众号，回复 登录 即可。", "密码是？ 关注程序员饭哥公众号，回复 登录 即可") || '';
+      if(!val) return;
+      if(!checkPwd(val)){
+        alert('密码错误！')
+        return;
+      }else{
+        setPwd(val)
+        alert('验证通过！')
+      }
+    }
+
     if (!content) {
-      alert("请输入内容！");
       return;
     }
 
@@ -121,7 +146,7 @@ export const ChatInput: FC<Props> = ({ onSend, messageIsStreaming, model, stopCo
         </div>
       </div>
       <div className="px-3 pt-2 pb-3 text-center text-xs text-black/50 dark:text-white/50 md:px-4 md:pt-3 md:pb-6">
-        bigerfe.com(大前端面试题库) - 模拟gpt官方UI，对接官方API，只需要绑定Key即可体验对话。站长vx：223344386 请备注来意。
+        bigerfe.com(大前端面试题库) - 拟gpt官方UI，对接官方API，只需绑定Key即可对话。<a href="https://qiniu.bigerfe.com/fangegongzonghao.jpg" style={{ color: '#fff', fontWeight: 'bold' }} target="_blank">站长公众号点这里</a>
       </div>
     </div>
   );

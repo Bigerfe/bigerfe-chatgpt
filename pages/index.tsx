@@ -59,13 +59,19 @@ export default function Home() {
     if(!str) return false;
     return str.length >=300 - CanSendCount;
   }
+
   const handleSend = async (message: Message, isResend: boolean) => {
+    if(!apiKey) {
+      alert('请先绑定key!')
+      return;
+    }
     if(apiKey === GuestKey){
       if(!canSend()){
         alert(`您的${CanSendCount}次体验已用完！去公众号回复"卡密"，领取正式卡密！卡密每7天重置一次，到时可重新领取！`);
         return false;
       }
     }
+
     if (selectedConversation) {
       let updatedConversation: Conversation;
 
