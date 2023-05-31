@@ -386,9 +386,8 @@ export default function Home() {
 
   if(!WebSiteStatus)
   return <>
-  <div style={{color:'white'}}>Error: returned an error: Too Many Requests. Please waite a moment.</div>
+  <div style={{color:'white'}}>当前访问人数过多，请稍后重试.</div>
   </>
-  return <div>由于当前访问人数过多，服务器已阻塞！预计明天恢复服务！感谢支持。</div>
 
   return (
     <>
