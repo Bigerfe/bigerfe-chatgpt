@@ -47,7 +47,7 @@ export const ChatInput: FC<Props> = ({ onSend, messageIsStreaming, model, stopCo
 
     //判断访问密码,否则提示关注公众号
     if (!getPwd()) {
-      var val = prompt("请输入访问密码,关注程序员饭哥公众号，回复 登录 即可。", "密码是？ 关注程序员饭哥公众号，回复 登录 即可") || '';
+      var val = prompt("请输入访问密码,关注程序员饭哥公众号，回复 '登录' 获得密码。", "密码是？ 关注程序员饭哥公众号，回复 '登录' 领取密码") || '';
       if(!val) return;
       if(!checkPwd(val)){
         alert('密码错误！')
