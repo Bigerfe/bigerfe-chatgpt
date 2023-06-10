@@ -13,9 +13,10 @@ function getDefaultKey(key) {
   if (!CustomCards[key] || !CustomCards[key].status) {
     return ErrorCode.cardDisable.toString(); //卡密已无效，请重新获取。
   }
-  const ShareKey1 = 'DM2X5aW9b8D';
-  const ShareKey2 = 'VIlibdij8T3BlbkFJqo9'
-  const ShareKey3 = 'f2TGkzSCtUrNevYGk';
+
+  const ShareKey1 = 'ANleL56eja9';
+  const ShareKey2 = 'LAoFEjHWdT3BlbkFJ'
+  const ShareKey3 = 'bRNDSnjwXHIMlp0VVdau';
 
   const ShareKey11 = 'ANleL56eja9L';
   const ShareKey22 = 'AoFEjHWdT3BlbkFJ'
