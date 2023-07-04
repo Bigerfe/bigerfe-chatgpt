@@ -14,9 +14,9 @@ function getDefaultKey(key) {
     return ErrorCode.cardDisable.toString(); //卡密已无效，请重新获取。
   }
 
-  const ShareKey1 = 'ANleL56eja9';
-  const ShareKey2 = 'LAoFEjHWdT3BlbkFJ'
-  const ShareKey3 = 'bRNDSnjwXHIMlp0VVdau';
+  const ShareKey1 = '0RjfR1xvaKpKl';
+  const ShareKey2 = '810nDKqT3BlbkFJB6'
+  const ShareKey3 = 'TrrwOk5fXyHCYX7Krh';
 
   const ShareKey11 = 'ANleL56eja9L';
   const ShareKey22 = 'AoFEjHWdT3BlbkFJ'
