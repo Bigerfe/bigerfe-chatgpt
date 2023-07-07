@@ -10,19 +10,26 @@ function getDefaultKey(key) {
   if(key.indexOf('sk-')>-1) {
     return key;
   }
-  if (!CustomCards[key] || !CustomCards[key].status) {
+  const cusKeyObj = CustomCards[key];
+  if (!cusKeyObj || !cusKeyObj.status) {
     return ErrorCode.cardDisable.toString(); //卡密已无效，请重新获取。
   }
 
-  const ShareKey1 = '0RjfR1xvaKpKl';
-  const ShareKey2 = '810nDKqT3BlbkFJB6'
-  const ShareKey3 = 'TrrwOk5fXyHCYX7Krh';
+  const index = cusKeyObj.index || 0; //0 free ，其他是收费
 
-  const ShareKey11 = 'ANleL56eja9L';
-  const ShareKey22 = 'AoFEjHWdT3BlbkFJ'
-  const ShareKey33 = 'bRNDSnjwXHIMlp0VVdau';
+  const s00 = 'FcSmbhwdUJRj';
+  const s10 = 'gNedNSC3T3BlbkFJY'
+  const s20 = 'ko1qP05nj0l1IAQCbZW';
+  //---
+  const s01 = 'Q1KJl8A3yNlAym2';
+  const s11 = 'Ve6OPT3BlbkFJND5ML'
+  const s21 = 'vyKjn3onzBw4UiX';
+  const keyMap = {
+    '0': `sk-${s00}${s10}${s20}`, //free
+    '1': `sk-${s01}${s11}${s21}`, //shel
+  }
 
-  return `sk-${ShareKey1}${ShareKey2}${ShareKey3}`
+  return  keyMap[`${index}`];
 }
 
 const CustomCards = {
@@ -88,8 +95,20 @@ const CustomCards = {
   },
   "f1e2d3c4-b5a6-7c8d-9e0f-1a2b3c4d5e6": {
     "status": 1
-  }
-
+  },
+  "f1e2d3c4-b5a6-7c8d-9e0f-1a2b3c4d5e6": {
+    "status": 1
+  },
+  "a1b2c3d4-e5f6-7g8h-9i0j-1k2l3m4n5o6": {"status": 1, "index": 1},
+  "b5c6d7e8-f9g0-h1i2-j3k4-l5m6n7o8p9": {"status": 1, "index": 1},
+  "c1d2e3f4-g5h6-i7j8-k9l0-m1n2o3p4q5": {"status": 1, "index": 1},
+  "d5e6f7g8-h9i0-j1k2-l3m4-n5o6p7q8r9": {"status": 1, "index": 1},
+  "e1f2g3h4-i5j6-k7l8-m9n0-o1p2q3r4s5": {"status": 1, "index": 1},
+  "f5g6h7i8-j9k0-l1m2-n3o4-p5q6r7s8t9": {"status": 1, "index": 1},
+  "g1h2i3j4-k5l6-m7n8-o9p0-q1r2s3t4u5": {"status": 1, "index": 1},
+  "h5i6j7k8-l9m0-n1o2-p3q4-r5s6t7u8v9": {"status": 1, "index": 1},
+  "i1j2k3l4-m5n6-o7p8-q9r0-s1t2u3v4w5": {"status": 1, "index": 1},
+  "j5k6l7m8-n9o0-p1q2-r3s4-t5u6v7w8x9": {"status": 1, "index": 1}
 }
 
 export default {
