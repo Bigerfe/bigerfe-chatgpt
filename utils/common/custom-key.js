@@ -16,10 +16,9 @@ function getDefaultKey(key) {
   }
 
   const index = cusKeyObj.index || 0; //0 free ，其他是收费
-
-  const s00 = 'FcSmbhwdUJRj';
-  const s10 = 'gNedNSC3T3BlbkFJY'
-  const s20 = 'ko1qP05nj0l1IAQCbZW';
+  const s00 = 'cliHl94r8h';
+  const s10 = '1KOHRgxiApT3Blbk'
+  const s20 = 'FJcA28wT75c9hhHue4QaeK';
   //---
   const s01 = 'Q1KJl8A3yNlAym2';
   const s11 = 'Ve6OPT3BlbkFJND5ML'
