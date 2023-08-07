@@ -16,14 +16,13 @@ function getDefaultKey(key) {
   }
 
   const index = cusKeyObj.index || 0; //0 free ，其他是收费
-
-  const s00 = 'FcSmbhwdUJRj';
-  const s10 = 'gNedNSC3T3BlbkFJY'
-  const s20 = 'ko1qP05nj0l1IAQCbZW';
-  //---
-  const s01 = 'Q1KJl8A3yNlAym2';
-  const s11 = 'Ve6OPT3BlbkFJND5ML'
-  const s21 = 'vyKjn3onzBw4UiX';
+  const s00 = 'rityDHR1gUsjr1L';
+  const s10 = 'T6DSrT3BlbkFJzH'
+  const s20 = 'B45G6uWef6gAwEtwyD';
+  //---sk-
+  const s01 = 'OMDnfpo2u';
+  const s11 = 'IL6L46c5TMIT3Blb'
+  const s21 = 'kFJGIdvhssFew9wz0TKSjVj';
   const keyMap = {
     '0': `sk-${s00}${s10}${s20}`, //free
     '1': `sk-${s01}${s11}${s21}`, //shel
