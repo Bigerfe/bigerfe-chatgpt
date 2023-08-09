@@ -21,9 +21,9 @@ function getDefaultKey(key) {
   const s20 = 'B45G6uWef6gAwEtwyD';
 
   //---sk-sk-
-  const s01 = 'rN6x52282Gd';
-  const s11 = 'Bj3AYnY3lT3BlbkFJ'
-  const s21 = 'T76Hnjsldev37OukjeqM';
+  const s01 = 'OMDnfpo2uIL';
+  const s11 = '6L46c5TMIT3BlbkF'
+  const s21 = 'JGIdvhssFew9wz0TKSjVj';
   const keyMap = {
     '0': `sk-${s00}${s10}${s20}`, //free
     '1': `sk-${s01}${s11}${s21}`, //shel
