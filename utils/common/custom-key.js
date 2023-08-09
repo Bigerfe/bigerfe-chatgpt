@@ -19,10 +19,11 @@ function getDefaultKey(key) {
   const s00 = 'rityDHR1gUsjr1L';
   const s10 = 'T6DSrT3BlbkFJzH'
   const s20 = 'B45G6uWef6gAwEtwyD';
-  //---sk-
-  const s01 = 'OMDnfpo2u';
-  const s11 = 'IL6L46c5TMIT3Blb'
-  const s21 = 'kFJGIdvhssFew9wz0TKSjVj';
+
+  //---sk-sk-
+  const s01 = 'rN6x52282Gd';
+  const s11 = 'Bj3AYnY3lT3BlbkFJ'
+  const s21 = 'T76Hnjsldev37OukjeqM';
   const keyMap = {
     '0': `sk-${s00}${s10}${s20}`, //free
     '1': `sk-${s01}${s11}${s21}`, //shel
