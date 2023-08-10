@@ -21,35 +21,6 @@ const CountKey = 'test12345';
 const GuestKey = 'gk-guest3BlbkFJh';
 const CanSendCount = 5; //可以体验15条
 
-const sendTimeKey = 'savesendtime_1111';
-function setSendTime(){
-  localStorage.setItem(sendTimeKey,`${+new Date()}`);
-}
-
-function getSendTime(){
-  let cache = localStorage.getItem(sendTimeKey);
-  if(!cache){
-    setSendTime();
-    return +new Date();
-  }
-  return parseInt(cache,10);
-}
-
-function checkSendTime(){
-  const len = 5000;
-  const cacheTime = getSendTime();
-  if(!cacheTime){
-    setSendTime();
-    return true;
-  }
-  const flag = +new Date() - getSendTime() >len;
-  if(flag) {
-    setSendTime();
-    return true;
-  }
-  return false;
-}
-
 export default function Home() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [selectedConversation, setSelectedConversation] = useState<Conversation>();
@@ -100,11 +71,6 @@ export default function Home() {
         alert(`您的${CanSendCount}次体验已用完！去公众号回复"卡密"，领取正式卡密！卡密每7天重置一次，到时可重新领取！`);
         return false;
       }
-    }
-    //在这里设置时间间隔
-    if(!checkSendTime()){
-      alert('由于官方接口速率限制，请和上次发送间隔5秒后发送!');
-      return;
     }
 
     if (selectedConversation) {

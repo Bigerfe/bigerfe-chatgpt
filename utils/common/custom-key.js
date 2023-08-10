@@ -5,6 +5,8 @@ const ErrorCode = {
 }
 
 const USER_SK_IDS_KEY = 'user-sk-ids';
+const PRICE_KEY_PREFIX='pmkpr-';//收费key的前缀，会作为key存储reids，然后请求时根据index来获取
+//另外需要开发一个设置key的入口
 
 function getDefaultKey(key) {
   if(key.indexOf('sk-')>-1) {

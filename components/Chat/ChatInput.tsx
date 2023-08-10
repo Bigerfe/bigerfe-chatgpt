@@ -9,6 +9,36 @@ interface Props {
   stopConversationRef: MutableRefObject<boolean>;
 }
 
+const sendTimeKey = 'savesendtime_11113333abc';
+function setSendTime(){
+  localStorage.setItem(sendTimeKey,`${+new Date()}`);
+}
+
+function getSendTime(){
+  let cache = localStorage.getItem(sendTimeKey);
+  if(!cache){
+    setSendTime();
+    return +new Date();
+  }
+  return parseInt(cache,10);
+}
+
+function checkSendTime(){
+  const len = 5000;
+  const cacheTime = getSendTime();
+  if(!cacheTime){
+    setSendTime();
+    return true;
+  }
+  const flag = +new Date() - getSendTime() >len;
+  if(flag) {
+    setSendTime();
+    return true;
+  }
+  return false;
+}
+
+
 export const ChatInput: FC<Props> = ({ onSend, messageIsStreaming, model, stopConversationRef }) => {
   const [content, setContent] = useState<string>();
   const [isTyping, setIsTyping] = useState<boolean>(false);
@@ -59,6 +89,12 @@ export const ChatInput: FC<Props> = ({ onSend, messageIsStreaming, model, stopCo
     }
 
     if (!content) {
+      return;
+    }
+
+     //在这里设置时间间隔
+     if(!checkSendTime()){
+      alert('由于官方接口速率限制，请和上次发送间隔5秒后发送!');
       return;
     }
 
