@@ -27,22 +27,15 @@ export const ChatMessage: FC<Props> = ({ message, lightMode }) => {
               components={{
                 code({ node, inline, className, children, ...props }) {
                   const match = /language-(\w+)/.exec(className || "");
-                  return !inline && match ? (
+                  return(
                     <CodeBlock
                       key={Math.random()}
-                      language={match[1]}
+                      language={match?.[1]||'text'}
                       value={String(children).replace(/\n$/, "")}
                       lightMode={lightMode}
                       {...props}
                     />
-                  ) : (
-                    <code
-                      className={className}
-                      {...props}
-                    >
-                      {children}
-                    </code>
-                  );
+                  )
                 },
                 table({ children }) {
                   return <table className="border-collapse border border-black dark:border-white py-1 px-3">{children}</table>;
