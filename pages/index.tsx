@@ -37,6 +37,11 @@ function getSendTime(){
 
 function checkSendTime(){
   const len = 5000;
+  const cacheTime = getSendTime();
+  if(!cacheTime){
+    setSendTime();
+    return true;
+  }
   const flag = +new Date() - getSendTime() >len;
   if(flag) {
     setSendTime();
