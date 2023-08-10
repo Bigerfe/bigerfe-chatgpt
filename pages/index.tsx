@@ -87,7 +87,7 @@ export default function Home() {
 
   const handleSend = async (message: Message, isResend: boolean) => {
     if(!apiKey) {
-      alert('请先绑定key!')
+      alert('请先绑定key!!')
       return;
     }
     if(apiKey === GuestKey){
