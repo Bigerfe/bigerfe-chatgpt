@@ -34,6 +34,10 @@ export const Chat: FC<Props> = ({ conversation, models, apiKey, messageIsStreami
     }
   };
 
+  const handleQAClick = ()=>{
+    alert('建设中！')
+  }
+
   const handleScroll = () => {
     if (chatContainerRef.current) {
       const { scrollTop, scrollHeight, clientHeight } = chatContainerRef.current;
@@ -115,7 +119,7 @@ export const Chat: FC<Props> = ({ conversation, models, apiKey, messageIsStreami
               </>
             ) : (
               <>
-                <div className="flex justify-center py-2 text-neutral-500 bg-neutral-100 dark:bg-[#444654] dark:text-neutral-200 text-sm border border-b-neutral-300 dark:border-none" style={{position: 'fixed', top:'0', width:'100%'}}>{conversation.model.name} &nbsp;&nbsp;| &nbsp;&nbsp;<a style={{color:'yellow'}} href="https://qiniu.bigerfe.com/fangegongzonghao.jpg" target="_blank">联系站长(扫码关注),点这里打开</a></div>
+                <div className="flex justify-center py-2 text-neutral-500 bg-neutral-100 dark:bg-[#444654] dark:text-neutral-200 text-sm border border-b-neutral-300 dark:border-none" style={{position: 'fixed', top:'0', width:'100%'}}>{conversation.model.name} &nbsp;&nbsp;| &nbsp;&nbsp;<a style={{color:'yellow'}} href="https://qiniu.bigerfe.com/fangegongzonghao.jpg" target="_blank">联系站长(扫码关注),点这里打开</a>&nbsp;&nbsp; <span onClick={handleQAClick}>Q&A</span></div>
                 <div className="flex justify-center py-2 text-neutral-500 bg-neutral-100 dark:bg-[#444654] dark:text-neutral-200 text-sm border border-b-neutral-300 dark:border-none"></div>
                 {conversation.messages.map((message, index) => (
                   <ChatMessage
