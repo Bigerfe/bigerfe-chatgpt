@@ -25,7 +25,7 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { model, messages, key, prompt, t, sign, other } = (await req.json()) as ChatBody;
     if(other !== 'chatgpt-bigerfe-req-!@#$%^&*()'){
-      if(+new Date() - parseInt(t || '0',10) > 5000){
+      if(+new Date() - parseInt(t || '0',10) > 15000){
         return new Response(`-111 网络问题，导致请求已过期！ 请新建对话~`); // 请求过期
       } 
       if(getSign(messages, t || '0') !== sign){
