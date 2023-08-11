@@ -12,16 +12,23 @@ function getDefaultKey(key) {
   if(key.indexOf('sk-')>-1) {
     return key;
   }
-  const cusKeyObj = CustomCards[key];
+  const buketStr = 'bucket';
+  const keyArr = key.split('bucket')[1];
+  const realKey = keyArr[0];
+  let keyBucket = keyArr[1];
+  
+  const cusKeyObj = CustomCards[keyArr[0]];
   if (!cusKeyObj || !cusKeyObj.status) {
     return ErrorCode.cardDisable.toString(); //卡密已无效，请重新获取。
   }
 
-  let index = cusKeyObj.index || 0; //0 free ，其他是收费
+  const index = cusKeyObj.index || 0; //0 free ，其他是收费
 
   if(index !== 0){
     //0是免费的，其他的是收费的，其他的如果么有后缀信息，则默认是1
-    index = key.split('bucket')[1] || 1; //默认第一个桶
+    keyBucket = keyBucket || 1; //默认第一个桶
+  }else{
+    keyBucket = 0;
   }
 
   const s00 = 'rityDHR1gUsjr1L';
@@ -64,7 +71,7 @@ function getDefaultKey(key) {
     '5': `sk-${s05}${s15}${s25}`, //shel
   }
 
-  return  keyMap[`${index}`];
+  return  keyMap[`${keyBucket}`];
 }
 
 const CustomCards = {
