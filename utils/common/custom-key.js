@@ -13,11 +13,11 @@ function getDefaultKey(key) {
     return key;
   }
   const buketStr = 'bucket';
-  const keyArr = key.split('bucket')[1];
+  const keyArr = key.split(buketStr);
   const realKey = keyArr[0];
   let keyBucket = keyArr[1];
   
-  const cusKeyObj = CustomCards[keyArr[0]];
+  const cusKeyObj = CustomCards[realKey];
   if (!cusKeyObj || !cusKeyObj.status) {
     return ErrorCode.cardDisable.toString(); //卡密已无效，请重新获取。
   }
