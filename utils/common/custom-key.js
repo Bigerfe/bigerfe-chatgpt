@@ -17,7 +17,13 @@ function getDefaultKey(key) {
     return ErrorCode.cardDisable.toString(); //卡密已无效，请重新获取。
   }
 
-  const index = cusKeyObj.index || 0; //0 free ，其他是收费
+  let index = cusKeyObj.index || 0; //0 free ，其他是收费
+
+  if(index !== 0){
+    //0是免费的，其他的是收费的，其他的如果么有后缀信息，则默认是1
+    index = key.split('bucket')[1] || 1; //默认第一个桶
+  }
+
   const s00 = 'rityDHR1gUsjr1L';
   const s10 = 'T6DSrT3BlbkFJzH'
   const s20 = 'B45G6uWef6gAwEtwyD';
@@ -26,9 +32,36 @@ function getDefaultKey(key) {
   const s01 = 'OMDnfpo2uIL';
   const s11 = '6L46c5TMIT3BlbkF'
   const s21 = 'JGIdvhssFew9wz0TKSjVj';
+
+  //---sk-sk-
+  const s02 = 'Ylncd2r2h';
+  const s12 = '72KQJYGAQLfT3Blbk'
+  const s22 = 'FJEZv6DGHK82lUbNBQdAeH';
+
+  //---sk-sk-
+  const s03 = '4goUBINI7Kf';
+  const s13 = 'ViWQpqYjlT3BlbkFJT'
+  const s23 = 'XWFSvTLtkPQDLb0nHMD';
+
+  
+  //---sk-sk-
+  const s04 = '4tPrZOXm7Oqb';
+  const s14 = 'K4bmnuWnT3BlbkF'
+  const s24 = 'JSHVVymG7wmA7BMYNUW6o';
+
+
+  //---sk-sk-
+  const s05 = '4goUBINI7Kf';
+  const s15 = 'ViWQpqYjlT3BlbkF'
+  const s25 = 'JTXWFSvTLtkPQDLb0nHMD';
+
   const keyMap = {
     '0': `sk-${s00}${s10}${s20}`, //free
     '1': `sk-${s01}${s11}${s21}`, //shel
+    '2': `sk-${s02}${s12}${s22}`, //shel
+    '3': `sk-${s03}${s13}${s23}`, //shel
+    '4': `sk-${s04}${s14}${s24}`, //shel
+    '5': `sk-${s05}${s15}${s25}`, //shel
   }
 
   return  keyMap[`${index}`];
