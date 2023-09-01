@@ -31,10 +31,9 @@ function getDefaultKey(key) {
     keyBucket = 0;
   }
 
-  const s00 = 'rityDHR1gUsjr1L';
-  const s10 = 'T6DSrT3BlbkFJzH'
-  const s20 = 'B45G6uWef6gAwEtwyD';
-
+  const s00 = 'SeHq3CQ6sb';
+  const s10 = '3vIhlS2HvsT3Bl'
+  const s20 = 'bkFJakGpoAGTkG3C0EsXgfPU';
   //---sk-sk-
   const s01 = 'OMDnfpo2uIL';
   const s11 = '6L46c5TMIT3BlbkF'
