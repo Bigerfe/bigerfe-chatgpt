@@ -37,9 +37,9 @@ function getDefaultKey(key) {
 
 
   //---sk-sk-
-  const s01 = 'OMDnfpo2uIL';
-  const s11 = '6L46c5TMIT3BlbkF'
-  const s21 = 'JGIdvhssFew9wz0TKSjVj';
+  const s01 = 'KzCNrW7DwY';
+  const s11 = '1vH34Nj7gDT3BlbkFJ'
+  const s21 = 'IeatqUGTSyFIgXwFdeuF';
 
   //---sk-sk-
   const s02 = 'Ylncd2r2h';
