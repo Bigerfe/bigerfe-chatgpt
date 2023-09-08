@@ -37,9 +37,9 @@ function getDefaultKey(key) {
 
 
   //---sk-sk-
-  const s01 = 'KzCNrW7DwY';
-  const s11 = '1vH34Nj7gDT3BlbkFJ'
-  const s21 = 'IeatqUGTSyFIgXwFdeuF';
+  const s01 = 'ymEXaj2uso';
+  const s11 = '9z9HfSIMVwT3Blb'
+  const s21 = 'kFJ0HUFwpmOb0OYeMzD79yy';
 
   //---sk-sk-
   const s02 = 'Ylncd2r2h';
@@ -63,6 +63,12 @@ function getDefaultKey(key) {
   const s15 = 'ViWQpqYjlT3BlbkF'
   const s25 = 'JTXWFSvTLtkPQDLb0nHMD';
 
+
+  //---sk-sk-99 独向账号
+  const s099 = '4goUBINI7Kf';
+  const s199 = 'ViWQpqYjlT3BlbkF'
+  const s299 = 'JTXWFSvTLtkPQDLb0nHMD';
+
   const keyMap = {
     '0': `sk-${s00}${s10}${s20}`, //free
     '1': `sk-${s01}${s11}${s21}`, //shel
@@ -70,6 +76,7 @@ function getDefaultKey(key) {
     '3': `sk-${s03}${s13}${s23}`, //shel
     '4': `sk-${s04}${s14}${s24}`, //shel
     '5': `sk-${s05}${s15}${s25}`, //shel
+    '99': `sk-${s099}${s199}${s299}`, //独享账号 琪仔
   }
 
   return  keyMap[`${keyBucket}`];
