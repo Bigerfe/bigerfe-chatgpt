@@ -36,10 +36,10 @@ function getDefaultKey(key) {
   const s20 = 'TXWFSvTLtkPQDLb0nHMD';
 
 
-  //---sk-sk-
-  const s01 = 'ymEXaj2uso';
-  const s11 = '9z9HfSIMVwT3Blb'
-  const s21 = 'kFJ0HUFwpmOb0OYeMzD79yy';
+  //---sk-sk-xsk-
+  const s01 = 'nyhT88Akqkg';
+  const s11 = 'TXFuYqtFJT3BlbkFJ8W'
+  const s21 = 'YD6VCsJKa7ix2VOLQC';
 
   //---sk-sk-
   const s02 = 'Ylncd2r2h';
