@@ -30,16 +30,15 @@ function getDefaultKey(key) {
   }else{
     keyBucket = 0;
   }
-
-  const s00 = '4goUBINI7KfV';
-  const s10 = 'iWQpqYjlT3BlbkFJ'
-  const s20 = 'TXWFSvTLtkPQDLb0nHMD';
+  const s00 = 'WO42sZxtf9rf1';
+  const s10 = '0zxPAAf5T3BlbkF'
+  const s20 = 'J5PIXrfL42QVfk81Yrtad';
 
 
   //---sk-sk-xsk-
-  const s01 = 'nyhT88Akqkg';
-  const s11 = 'TXFuYqtFJT3BlbkFJ8W'
-  const s21 = 'YD6VCsJKa7ix2VOLQC';
+  const s01 = 'WO42sZxtf9rf';
+  const s11 = '0zxPAAf5T3BlbkF'
+  const s21 = 'J5PIXrfL42QVfk81Yrtad';
 
   //---sk-sk-
   const s02 = 'Ylncd2r2h';
@@ -129,9 +128,6 @@ const CustomCards = {
     "status": 1
   },
   "5e4d3c2b-1a2b-3c4d-5e6f-7a8b9c0d1e2": {
-    "status": 1
-  },
-  "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7b6a5c4": {
     "status": 1
   },
   "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8": {
