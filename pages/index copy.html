@@ -398,7 +398,79 @@ export default function Home() {
 
   return (
     <>
-      <div style={{color:'#fff', textAlign:'center', paddingTop:100}}>公告：各位朋友好，很抱歉，网站近期被攻击，数据丢失了。<br/><br/>也正好赶到年底，工作特别忙，数据恢复工作量较大，目前只能抽空处理，我会尽快恢复网站，感谢大家的支持！</div>
+      <Head>
+        <title>chatGPT中文版 - 国内直接使用</title>
+        <meta
+          name="description"
+          content="ChatGPT but better."
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+        <link
+          rel="icon"
+          href="/favicon.ico"
+        />
+      </Head>
+      {selectedConversation && (
+        <main className={`flex flex-col h-screen w-screen text-white dark:text-white text-sm ${lightMode}`}>
+          <div className="sm:hidden w-full fixed top-0">
+            <Navbar
+              selectedConversation={selectedConversation}
+              onNewConversation={handleNewConversation}
+            />
+          </div>
+
+          <article className="flex h-full w-full pt-[48px] sm:pt-0">
+            {showSidebar ? (
+              <>
+                <Sidebar
+                  loading={messageIsStreaming}
+                  conversations={conversations}
+                  lightMode={lightMode}
+                  selectedConversation={selectedConversation}
+                  apiKey={apiKey}
+                  onToggleLightMode={handleLightMode}
+                  onNewConversation={handleNewConversation}
+                  onSelectConversation={handleSelectConversation}
+                  onDeleteConversation={handleDeleteConversation}
+                  onToggleSidebar={() => setShowSidebar(!showSidebar)}
+                  onUpdateConversation={handleUpdateConversation}
+                  onApiKeyChange={handleApiKeyChange}
+                  onClearConversations={handleClearConversations}
+                  onExportConversations={handleExportConversations}
+                  onImportConversations={handleImportConversations}
+                />
+
+                <IconArrowBarLeft
+                  className="fixed top-2.5 left-4 sm:top-1 sm:left-4 sm:text-neutral-700 dark:text-white cursor-pointer hover:text-gray-400 dark:hover:text-gray-300 h-7 w-7 sm:h-8 sm:w-8 sm:hidden"
+                  onClick={() => setShowSidebar(!showSidebar)}
+                />
+              </>
+            ) : (
+              <IconArrowBarRight
+                className="fixed text-white z-50 top-2.5 left-4 sm:top-1.5 sm:left-4 sm:text-neutral-700 dark:text-white cursor-pointer hover:text-gray-400 dark:hover:text-gray-300 h-7 w-7 sm:h-8 sm:w-8"
+                onClick={() => setShowSidebar(!showSidebar)}
+              />
+            )}
+
+            <Chat
+              conversation={selectedConversation}
+              messageIsStreaming={messageIsStreaming}
+              apiKey={apiKey}
+              modelError={modelError}
+              messageError={messageError}
+              models={models}
+              loading={loading}
+              lightMode={lightMode}
+              onSend={handleSend}
+              onUpdateConversation={handleUpdateConversation}
+              stopConversationRef={stopConversationRef}
+            />
+          </article>
+        </main>
+      )}
     </>
   );
 }
