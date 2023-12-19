@@ -398,7 +398,10 @@ export default function Home() {
 
   return (
     <>
-      <div style={{color:'#fff', textAlign:'center', paddingTop:100}}>公告：各位朋友好，很抱歉，网站近期被攻击，数据丢失了。<br/><br/>也正好赶到年底，工作特别忙，数据恢复工作量较大，目前只能抽空处理，我会尽快恢复网站，感谢大家的支持！</div>
+      <div style={{color:'#fff', textAlign:'center', paddingTop:100}}>公告：各位朋友好，很抱歉，网站近期被攻击，数据丢失了。<br/><br/>也正好赶到年底，工作特别忙，数据恢复工作量较大，目前只能抽空处理，我会尽快恢复网站，感谢大家的支持！
+      <br/>
+      个人微信号：223344386
+      </div>
     </>
   );
 }
